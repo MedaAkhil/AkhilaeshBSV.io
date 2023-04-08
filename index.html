@@ -1,20 +1,20 @@
 <!DOCTYPE html>
 <html>
   <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Random Table Cell Border Width</title>
     <style>
         *{
             padding: 0;
             margin: 0;
-            /* box-sizing: border-box; */
             font-family: 'Poppins', sans-serif;
             text-decoration: none;
             list-style: none;
         }
         :root{
-            /* --bg-color:#222327; */
             --bg-color:white;
-            /* --text-color:#fff; */
             --text-color:black;
             --main-color:#29fd53;
         }
@@ -27,15 +27,12 @@
             position: fixed;
             width: 100%;
             top: 0;
-            /* right: 0; */
             z-index: 1000;
             display: flex;
-            /* display: inline; */
             align-items: center;
             justify-content: space-between;
             background-color: white;
             padding: 9px 12%;
-            /* transition: 1ll .50s ease; */
         }
         .navbar{
             display: flex;
@@ -46,13 +43,11 @@
             font-weight: 750;
             padding: 1px 0;
             margin-right: 30px;
-            /* margin: 0px 30px; */
-            /* transition: all .50s ease; */
         }
         header{
-        box-shadow: -30px 10px 20px rgba(0,0,0,0.3);
-        height: 10vh;
-      }
+            box-shadow: -30px 10px 20px rgba(0,0,0,0.3);
+            height: 10vh;
+        }
         h1{
             width: 600px;
             margin-right: 50px;
@@ -65,63 +60,60 @@
             font-size: 25px;
             padding-left: 20px;
         }
-        td:hover {background-color: coral;}
+        td:hover {
+            background-color: coral;
+        }
         input{
             width: 199px;
             margin-right: 304px;
             margin-left: 25px;
         }
-
         table, th, td {
-        border: 1px solid black;
-        border-collapse: collapse;
-        text-align: center;
-        padding: 10px;
-        padding-left: 34px;
-        padding-right: 26px;
+            border: 1px solid black;
+            border-collapse: collapse;
+            text-align: center;
+            padding: 10px;
+            padding-left: 34px;
+            padding-right: 26px;
       }
       footer {
-        margin-bottom: 0px;
-        margin-top: 567px;
-        margin-left: 491px;
-        position: fixed;
+            margin-bottom: 0px;
+            margin-top: 567px;
+            margin-left: 491px;
+            position: fixed;
       }
       input{
-        height: 28px;
-        margin-top: 213x;
-        width: 250px;
+            height: 28px;
+            margin-top: 213x;
+            width: 250px;
       }
       button{
-        size: 150px;
-        width: 90px;
-        height: 30px;
-        margin-left: 9px;
-        border-radius: 5px;
+            size: 150px;
+            width: 90px;
+            height: 30px;
+            margin-left: 9px;
+            border-radius: 5px;
       }
-      
       td{
-        width: 30px;
+            width: 30px;
       }
       .array_div{
-        margin-top: 300px;
-        margin-left: 297px;
-        position: fixed;
+            margin-top: 300px;
+            margin-left: 297px;
+            position: fixed;
       }
       footer input{
-        margin-left: -10px;
-        margin-right: -1px;
-        border-radius: 5px;
-        padding-left: 7px;
+            margin-left: -10px;
+            margin-right: -1px;
+            border-radius: 5px;
+            padding-left: 7px;
       }
       table{
-        overflow-x:auto;
+            overflow-x:auto;
       }
-      
-
     </style>
   </head>
   <body>
-    
         <header >
             <h1>Binary Search Visualization</h1>
                 <ul class="navbar">
@@ -129,7 +121,6 @@
                     <li>Mid<textarea style="resize: none" name="" id="tmid" placeholder="0" cols="10" rows="1" ></textarea></li>
                     <li>High<textarea style="resize: none" name="" id="thigh" placeholder="0" cols="10" rows="1" ></textarea></li>
                     <li>Speed<input id="exe_speed" type="range" value="3000" min="1000" max="10000" ></textarea></li>
-
                 </ul>
         </header>
         <div class="array_div" id="div_id">
@@ -155,14 +146,10 @@
               <button onclick="reset_table_highlight()">Reset</button>
           </footer>
           <script>
-
-
-
         function sleep(ms = document.getElementById("exe_speed").value) {
             return new Promise(resolve => setTimeout(resolve, ms));
         }
         async function Tutor() {
-
             async function binarySearch() {
                 arr = [2, 7, 13, 20, 26, 30, 34, 39, 42, 48];
                 var input = document.getElementById("key_value");
@@ -173,7 +160,6 @@
                 var tmid = 0;
                 let end = arr.length - 1;
                 await sleep();
-                
                 while (start <= end) {
                     let mid = Math.floor((start + end) / 2);
                     tlow = document.getElementById("tlow").placeholder;
@@ -190,10 +176,9 @@
                         i=mid;
                         await sleep();
                         tlow = document.getElementById("tlow");
-                              tlow.placeholder=start;
-                              
-                              thigh = document.getElementById("thigh");
-                              thigh.placeholder=end;
+                        tlow.placeholder=start;
+                        thigh = document.getElementById("thigh");
+                        thigh.placeholder=end;
                         reset_table_highlight();
                         sleep();
                         document.getElementById("div_id").innerHTML=`<div style="display: flex;border: 1px solid black;justify-content: center;margin: 0 auto;padding-top: 20px;border-radius: 5px;align-self: center;height: 100px;width: 500px;"><h2>Element Found At Index: `+mid+`</h2></div>`;
@@ -233,7 +218,6 @@
             }
             binarySearch();
         }
-
         function highlight(low,high){
             low_cell = document.getElementsByTagName("td");
             low_cell[low].style.borderWidth="7px";
@@ -246,121 +230,9 @@
         }
         function reset_table_highlight(){
             var cells = document.getElementsByTagName("td");
-            // for(i=0;i<10;i++){
-            //     cells[i].style.borderWidth = "1px";
-            
-            // }
-            document.getElementById("div_id").innerHTML="<table id=\"table_array\" border=\"1\"><tr id=\"table_array_tr\"><td>2</td><td>7</td><td>13</td><td>20</td><td>26</td><td>30</td><td>34</td><td>39</td><td>42</td><td>48</td></tr></table>";
-
+        document.getElementById("div_id").innerHTML="<table id=\"table_array\" border=\"1\"><tr id=\"table_array_tr\"><td>2</td><td>7</td><td>13</td><td>20</td><td>26</td><td>30</td><td>34</td><td>39</td><td>42</td><td>48</td></tr></table>";
         document.getElementById("completed_print_para").innerHTML="";
-        
-        }   
-    //   function binarySearch() {
-    //     arr = [2, 7, 13, 20, 26, 30, 34, 39, 42, 48];
-    //     var input = document.getElementById("key_value");
-    //     val = parseInt(input.value);
-    //     console.log(typeof(val));
-    //     let start = 0;
-    //     let end = arr.length - 1;
-    //     while (start <= end) {
-    //       let mid = Math.floor((start + end) / 2);
-    //       if (arr[mid] == val) {
-    //         var i = document.getElementById("dis");
-    //         i=mid;
-    //         document.getElementById("completed_print_para").innerHTML="completed : "+mid;
-    //         var cells = document.getElementsByTagName("td");
-    //         cells[i].style.borderWidth = "7px";
-    //         return mid;
-
-    //       } else if (arr[mid] < val) {
-    //         start = mid + 1;
-    //         highlight(start,end);
-    //         Tutor();
-    //         reset_table_highlight();
-    //       } else {
-    //         end = mid - 1;
-    //         highlight(start,end);
-    //       }
-    //     }
-    //       return -1;
-    //   }
-        // function step(){
-        //     var input = document.getElementById("key_value");
-        //     var value = parseInt(input.value);
-        //     table_data = document.getElementsByTagName("td")
-        //     print_table = document.getElementById("testpara");
-        //     function sleep(ms) {
-        //         return new Promise(resolve => setTimeout(resolve, ms));
-        //       }
-        //     async function Tutor() {
-        //       console.log("0 sec");
-        //         await sleep(7000);
-        //         print_table.innerHTML = "hello : "+table_data[4].innerHTML+" "+value+" "+table_data[parseInt(value)].innerHTML+" ";
-        //         console.log("7 sec");
-        //     }
-        //     Tutor()
-      
-        //   }
+        }
         </script>
-
-
-
-
-
-
-
-          <!-- <script>
-      
-              
-          //   function binarySearch() {
-          //     arr = [2, 7, 13, 20, 26, 30, 34, 39, 42, 48];
-          //     var input = document.getElementById("key_value");
-          //     val = parseInt(input.value);
-          //     console.log(typeof(val));
-          //     let start = 0;
-          //     let end = arr.length - 1;
-          //     while (start <= end) {
-          //       let mid = Math.floor((start + end) / 2);
-          //       if (arr[mid] == val) {
-          //         var i = document.getElementById("dis");
-          //         i=mid;
-          //         document.getElementById("completed_print_para").innerHTML="completed : "+mid;
-          //         var cells = document.getElementsByTagName("td");
-          //         cells[i].style.borderWidth = "7px";
-          //         return mid;
-      
-          //       } else if (arr[mid] < val) {
-          //         start = mid + 1;
-          //         highlight(start,end);
-          //         Tutor();
-          //         reset_table_highlight();
-          //       } else {
-          //         end = mid - 1;
-          //         highlight(start,end);
-          //       }
-          //     }
-          //       return -1;
-          //   }
-              // function step(){
-              //     var input = document.getElementById("key_value");
-              //     var value = parseInt(input.value);
-              //     table_data = document.getElementsByTagName("td")
-              //     print_table = document.getElementById("testpara");
-              //     function sleep(ms) {
-              //         return new Promise(resolve => setTimeout(resolve, ms));
-              //       }
-              //     async function Tutor() {
-              //       console.log("0 sec");
-              //         await sleep(7000);
-              //         print_table.innerHTML = "hello : "+table_data[4].innerHTML+" "+value+" "+table_data[parseInt(value)].innerHTML+" ";
-              //         console.log("7 sec");
-              //     }
-              //     Tutor()
-            
-              //   }
-              </script> -->
-    <footer>
-
-    </footer>
 </body>
 </html>
