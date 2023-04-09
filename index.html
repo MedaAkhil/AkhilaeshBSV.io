@@ -44,7 +44,7 @@
             padding: 1px 0;
             margin-right: 30px;
         }
-        header{
+            header{
             box-shadow: -30px 10px 20px rgba(0,0,0,0.3);
             height: 10vh;
         }
@@ -60,9 +60,7 @@
             font-size: 25px;
             padding-left: 20px;
         }
-        td:hover {
-            background-color: coral;
-        }
+        td:hover {background-color: coral;}
         input{
             width: 199px;
             margin-right: 304px;
@@ -77,39 +75,49 @@
             padding-right: 26px;
       }
       footer {
-            margin-bottom: 0px;
-            margin-top: 567px;
-            margin-left: 491px;
-            position: fixed;
+        margin-bottom: 0px;
+        margin-top: 567px;
+        margin-left: 521px;
+        position: fixed;
       }
       input{
-            height: 28px;
-            margin-top: 213x;
-            width: 250px;
+        height: 28px;
+        margin-top: 213x;
+        width: 250px;
       }
       button{
-            size: 150px;
-            width: 90px;
-            height: 30px;
-            margin-left: 9px;
-            border-radius: 5px;
+        size: 150px;
+        width: 90px;
+        height: 30px;
+        margin-left: 9px;
+        border-radius: 5px;
       }
+      
       td{
-            width: 30px;
+        width: 30px;
+        transition: .5s;
       }
       .array_div{
-            margin-top: 300px;
-            margin-left: 297px;
-            position: fixed;
+        margin-top: 300px;
+        margin-left: 297px;
+        position: fixed;
       }
       footer input{
-            margin-left: -10px;
-            margin-right: -1px;
-            border-radius: 5px;
-            padding-left: 7px;
+        margin-left: -10px;
+        margin-right: -1px;
+        border-radius: 5px;
+        padding-left: 7px;
       }
       table{
-            overflow-x:auto;
+        overflow-x:auto;
+      }
+      .center{
+        position: relative;
+        display: flex;
+        align-items: center;
+        align-content: center;
+        position: relative;
+        top: 190px;
       }
     </style>
   </head>
@@ -123,22 +131,24 @@
                     <li>Speed<input id="exe_speed" type="range" value="3000" min="1000" max="10000" ></textarea></li>
                 </ul>
         </header>
-        <div class="array_div" id="div_id">
-            <table id="table_array" >
-              <tr id="table_array_tr">
-                <td>2</td>
-                <td>7</td>
-                <td>13</td>
-                <td>20</td>
-                <td>26</td>
-                <td>30</td>
-                <td>34</td>
-                <td>39</td>
-                <td>42</td>
-                <td>48</td>
-              </tr>
-            </table>
-          </div>
+        <div class="center">
+          <div class="array_div" id="div_id">
+              <table id="table_array" >
+                <tr id="table_array_tr">
+                  <td>2</td>
+                  <td>7</td>
+                  <td>13</td>
+                  <td>20</td>
+                  <td>26</td>
+                  <td>30</td>
+                  <td>34</td>
+                  <td>39</td>
+                  <td>42</td>
+                  <td>48</td>
+                </tr>
+              </table>
+            </div>
+        </div>
           <p id="completed_print_para"></p>
           <footer>
               <input type="number" id="key_value" placeholder="Enter the Number">
